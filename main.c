@@ -1,5 +1,5 @@
-// ELEC2645 Unit 2 Project
-// Main menu and menu handling code
+// Unit 2 Project for ELEC2645
+// Code for the main menu and menu handling
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,7 +8,7 @@
 #include <math.h>
 #include "funcs.h"
 
-// prototypes
+// Models
 static void main_menu(void);
 static void print_main_menu(void);
 static int get_user_input(void);
@@ -18,7 +18,7 @@ static int is_integer(const char *s);
 
 int main(void)
 {
-    // run forever until exit is selected
+    // run indefinitely until the exit option is chosen.
     for (;;) {
         main_menu();
     }
@@ -71,22 +71,22 @@ static void select_menu_item(int input)
 {
     switch (input) {
         case 1:
-            menu_item_1();   // signal analyser
+            menu_item_1();   // Analysing signals
             break;
         case 2:
-            menu_item_2();   // adc converter
+            menu_item_2();   // ADC converter
             break;
         case 3:
-            menu_item_3();   // rc filter
+            menu_item_3();   // RC filter
             break;
         case 4:
-            menu_item_4();   // unit converter
+            menu_item_4();   // Unit converter
             break;
         case 5:
-            menu_item_5();   // resistor code
+            menu_item_5();   // Resistor code
             break;
         case 6:
-            menu_item_6();   // ai helper
+            menu_item_6();   // Ai assistant
             break;
         default:
             printf("Bye!\n");
