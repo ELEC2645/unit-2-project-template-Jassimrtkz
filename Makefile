@@ -12,3 +12,4 @@ clean:
 
 test: clean main.out
 	bash test.sh
+	
