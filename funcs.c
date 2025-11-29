@@ -1,5 +1,5 @@
-// funcs.c - Engineering Helper Toolkit
-// code for all menu items used in the main menu
+// Engineering Helper Toolkit: funcs.c
+// The code for every item on the main menu
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,24 +15,24 @@
 #define MAX_SAMPLES 100
 #define ADC_RES 1023
 
-// internal helpers
+// internal assistants
 static void flush_in(void);
 static int get_int(const char *msg, int min, int max);
 
-// signal analyser helpers
+// assistants for signal analysers
 static double calc_rms(double *x, int n);
 static void min_max(double *x, int n, double *mn, double *mx);
 static void draw_graph(double *x, int n);
 
-// adc helpers
+// Adc assistants
 static double adc_to_voltage(int adc, int max_adc, double vref);
 static double voltage_to_temp(double v);
 
-// rc filter helpers
+// RC filter assistants
 static double find_c(double fc, double R);
 static double find_r(double fc, double C);
 
-// unit converter helpers
+// Unit converter assistants
 static double dbm_to_mw(double dbm);
 static double mw_to_dbm(double mw);
 static double hz_to_rad(double f);
@@ -40,7 +40,7 @@ static double rad_to_hz(double w);
 static double peak_to_rms(double vp);
 static double rms_to_peak(double vr);
 
-// resistor helpers
+// Resistor assistants
 static void read_col(char *buf, int size, const char *msg);
 static void str_lower(char *s);
 static int digit_from_colour(const char *c);
@@ -48,7 +48,7 @@ static int mult_from_colour(const char *c, double *mult);
 static const char *tol_from_colour(const char *c);
 static void format_res(double R, double *mag, const char **unit);
 
-// ai helper + journal logging
+// AI assistant plus journaling
 static void show_expl(void);
 static void quiz(void);
 static void view_results(void);
@@ -84,9 +84,9 @@ static int get_int(const char *msg, int min, int max)
     return v;
 }
 
-//
-// MENU ITEM 1 — SIGNAL ANALYSER
-//
+
+// MENU ITEM 1: SIGNAL ANALYSER
+
 
 void menu_item_1(void)
 {
@@ -155,7 +155,7 @@ static void draw_graph(double *x, int n)
 }
 
 //
-// MENU ITEM 2 — ADC CONVERTER
+// MENU ITEM 2: ADC CONVERTER
 //
 
 void menu_item_2(void)
@@ -200,7 +200,7 @@ static double voltage_to_temp(double v)
 }
 
 //
-// MENU ITEM 3 — RC FILTER
+// MENU ITEM 3: RC FILTER
 //
 
 void menu_item_3(void)
@@ -253,7 +253,7 @@ static double find_r(double fc, double C)
 }
 
 //
-// MENU ITEM 4 — UNIT CONVERTER
+// MENU ITEM 4: UNIT CONVERTER
 //
 
 void menu_item_4(void)
@@ -323,7 +323,7 @@ static double rms_to_peak(double vr)
 }
 
 //
-// MENU ITEM 5 — RESISTOR CODE
+// MENU ITEM 5: RESISTOR CODE
 //
 
 void menu_item_5(void)
@@ -448,7 +448,7 @@ static void format_res(double R, double *mag, const char **unit)
 }
 
 //
-// MENU ITEM 6 — AI HELPER
+// MENU ITEM 6: AI HELPER
 //
 
 void menu_item_6(void)
@@ -521,9 +521,9 @@ static void view_results(void)
     fclose(f);
 }
 
-//
+
 // LOGGING
-//
+
 
 static void log_signal(double mn, double mx, double p2p, double rms)
 {
@@ -551,18 +551,18 @@ static void log_res(double R, const char *tol)
     fclose(f);
 }
 
-//
+
 // TEST HELPERS
-//
+
 
 static int nearly(double a, double b, double tol)
 {
     return fabs(a - b) < tol;
 }
 
-//
-// INTERNAL TESTS — FINAL FIXED VERSION (3/3 tests pass)
-//
+
+// INTERNAL TESTS
+
 
 static void run_tests(void)
 {
