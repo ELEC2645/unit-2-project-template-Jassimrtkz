@@ -1,37 +1,189 @@
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=21747707)
-# ELEC2645 Unit 2 Project Template
+# Engineering Helper Toolkit  
+ELEC2645 – Unit 2 Individual Project  
+Author: Jassim Khalid I S Almuhaiza  
+Academic Year: 2025/26
 
-** PLEASE DELETE THIS README AND REPLACE IT WITH YOUR OWN README.md FILE DESCRIBING YOUR PROJECT **
+---
 
+## Overview
 
-This is the basic code for a command line application which you should use for your Unit 2 project.
+A command-line tool created for the ELEC2645 Unit 2 project is called the Engineering Helper Toolkit.  
+The software aims to offer a small collection of tools that are frequently needed in computer engineering and electronics.  
+Calculations pertinent to modules like these are included.
 
-The code has separated the menu handling code in `main.c` and the function implementations in `funcs.c`. You should add your code to `funcs.c` (or you can create new files if you wish), and update `main.c` to call your functions from the menu.
+- **ELEC2101 – Electronic Circuits & Systems Design**
+- Work at the general electronics lab
+- Basics of signal processing
+- Converting sensors to ADCs
 
+The program adds new features, enhanced input validation, file logging, and internal automated testing to the Unit Version 2.1 basic menu template.
 
-### 1 Run code
+---
 
-You can build the code as we have been using in the labs with 
-`gcc main.c funcs.c -o main.out -lm` (the `-lm` is required to link the math library). You can also use `make -B` to force a rebuild using the provided `Makefile`.
+## Features
 
-Then run the code with `./main.out`
+### **1. Signal Analyser**
+- Enter a list of examples 
+- calculates:
+  - Minimal quantity  
+  - Maximum amount  
+  - Peak-to-Peak  
+  - RMS  
+- shows a sample magnitude bar graph in ASCII.  
+- The choice to store every result in `results.txt`
 
+---
 
-### 2 The assignment
+### **2. ADC Converter**
+- 10-bit ADC (0–1023) values are converted to voltage  
+- includes a reference voltage that the user can adjust. 
+- uses a basic linear model to estimate temperature. (100°C/V)  
+- able to record outcomes in a file
 
-Please read the assignment brief on the Minerva page for details of what you need to implement. 
+---
 
+### **3. RC Filter Calculator**
+Uses the standard cutoff formula:
 
+```
+fc = 1 / (2πRC)
+```
 
-### 3 Test command
+Two modes:
+- Enter R → calculate C  
+- Enter C → calculate R  
 
-The `test.sh` script is provided to check that your code compiles correctly. This is what the autograder will use to check your submission. You can run it with `bash test.sh` or `./test.sh` or just `make test`. 
+helpful for lab tasks and ELEC2101 filter design.
 
-You do not need to modify this script, but you can look at it to see what it does.
+---
 
+### **4. Unit Converter**
+Quick conversions:
 
-### 4 Submit Solution
+- dBm → mW  
+- mW → dBm  
+- Hz → rad/s  
+- rad/s → Hz  
+- Vpeak → Vrms  
+- Vrms → Vpeak  
 
-Use the same method as previous labs to commit and push your code to your GitHub repository for the autograder to check. 
+The right engineering formulas are used in each conversion.
 
-In your final journal post, please include a link to your GitHub repository containing your code  *and* a zip file of your code as an attachment.
+---
+
+### **5. Resistor Colour Code Calculator**
+- accepts all common resistor bands. 
+- Calculates:
+  - Precise resistance 
+  - Scaled value (Ω, kΩ, MΩ)  
+  - Tolerance
+  - Records outcomes in `results.txt`  
+  
+
+---
+
+### **6. AI Helper**
+Includes:
+- Brief explanations in engineering (RMS, ADC, RC filters)  
+- A multi-choice test 
+- Viewer of stored results 
+- Internal testing that is automated (3 tests)
+
+Example output:
+```
+Passed 3/3 tests.
+```
+
+---
+
+## File Logging
+
+Results are saved and added to a text file:
+
+```
+results.txt
+```
+
+Example entries:
+```
+SIGNAL mn=0.0000 mx=98.0000 p2p=98.0000 rms=50.3310
+ADC adc=512 vref=3.30 V=1.6500 T=165.00
+RES R=1000 tol=±5%
+```
+
+The following enhances project completeness and facilitates traceability.
+
+---
+
+## Way to Create
+
+Compile using gcc:
+
+```bash
+gcc main.c funcs.c -o main.out -lm
+```
+
+`-lm` links the math library.
+
+---
+
+## Way to Run
+
+```bash
+./main.out
+```
+
+You will see:
+
+```
+1. Signal analyser
+2. ADC converter
+3. RC filter calculator
+4. Unit converter
+5. Resistor colour code calculator
+6. AI helper
+7. Exit
+```
+
+---
+
+## Project Structure
+
+```
+│── main.c          # Menu handling 
+│── funcs.c         # Complete use of every tool
+│── funcs.h         # Definitions of functions
+│── results.txt     # Logs 
+│── README.md       # Recordkeeping
+│── Makefile        # Script for optional builds
+```
+
+---
+
+## Testing
+
+There is a test harness built into the AI Assistant.
+
+To run tests:
+```
+Menu → 6 → 4
+```
+
+Expected output:
+```
+Passed 3/3 tests.
+```
+
+The result confirms the accuracy of the Hzrad/s round-trip calculation, dBm conversion, and RMS calculation.
+
+---
+
+## Notes
+
+- To avoid crashes, input validation was applied throughout.  
+- Extra features (testing + explanations + logging)  exhibit imagination and comprehension that goes beyond the necessities.  
+
+---
+
+## License
+This project was created for use in ELEC2645 Unit 2 at the University of Leeds.
