@@ -372,9 +372,9 @@ static double rms_to_peak(double vr)
 
 
 
-// ------------------------------------------------------------
+
 // MENU ITEM 5: RESISTOR COLOUR CODE
-// ------------------------------------------------------------
+
 
 void menu_item_5(void)
 {
