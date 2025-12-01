@@ -1,44 +1,51 @@
 # Engineering Helper Toolkit  
 ELEC2645 – Unit 2 Individual Project  
-Author: Jassim Khalid I S Almuhaiza  
+Author: Jassim Khalid I S AlMuhaiza 
 Academic Year: 2025/26
 
 ---
 
 ## Overview
 
-A command-line tool created for the ELEC2645 Unit 2 project is called the Engineering Helper Toolkit.  
-The software aims to offer a small collection of tools that are frequently needed in computer engineering and electronics.  
-Calculations pertinent to modules like these are included.
+A command-line tool created for the ELEC2645 Unit 2 project is called the Engineering Helper Toolkit.
+ The objective is to offer a small collection of engineering utilities that are commonly needed in:
 
-- **ELEC2101 – Electronic Circuits & Systems Design**
-- Work at the general electronics lab
-- Basics of signal processing
-- Converting sensors to ADCs
 
-The program adds new features, enhanced input validation, file logging, and internal automated testing to the Unit Version 2.1 basic menu template.
+ ELEC2101: Design of Electronic Circuits and Systems
+
+ General electronics laboratory tasks
+
+ Signal processing fundamentals
+
+ Sensor-to-ADC conversion job
+
+ The software extends on the Unit Version 2.1 template by providing new tools, greater input validation, file logging, and internal automated testing.
 
 ---
 
 ## Features
 
 ### **1. Signal Analyser**
-- Enter a list of examples 
-- calculates:
-  - Minimal quantity  
-  - Maximum amount  
-  - Peak-to-Peak  
-  - RMS  
-- shows a sample magnitude bar graph in ASCII.  
-- The choice to store every result in `results.txt`
+
+- Accepts input from users samples
+
+- Determines: minimum, maximum, peak-to-peak, RMS
+
+- Produces ASCII bar graphs
+
+- The ability to save results into results.txt
 
 ---
 
 ### **2. ADC Converter**
-- 10-bit ADC (0–1023) values are converted to voltage  
-- includes a reference voltage that the user can adjust. 
-- uses a basic linear model to estimate temperature. (100°C/V)  
-- able to record outcomes in a file
+
+- Produces voltage from 10-bit ADC data (0–1023).
+
+- Makes use of a variable reference voltage
+
+- Uses a proportionate model (100°C/V) to estimate temperature.
+
+- Enables file logging
 
 ---
 
@@ -47,13 +54,16 @@ Uses the standard cutoff formula:
 
 ```
 fc = 1 / (2πRC)
+
 ```
 
 Two modes:
-- Enter R → calculate C  
-- Enter C → calculate R  
 
-helpful for lab tasks and ELEC2101 filter design.
+- Enter R → calculate C
+
+- Enter C → calculate R
+
+Important for ELEC2101 labs and filter computation.
 
 ---
 
@@ -67,27 +77,27 @@ Quick conversions:
 - Vpeak → Vrms  
 - Vrms → Vpeak  
 
-The right engineering formulas are used in each conversion.
+Every conversion uses the appropriate technical formulas.
 
 ---
 
 ### **5. Resistor Colour Code Calculator**
-- accepts all common resistor bands. 
+- Takes into account every common resistor band. 
 - Calculates:
-  - Precise resistance 
-  - Scaled value (Ω, kΩ, MΩ)  
+  - Recognises typical resistor colour bands
+  - Produces accurate resistance and scaled values (Ω, kΩ, MΩ)  
   - Tolerance
-  - Records outcomes in `results.txt`  
+  - Results can be saved to results.txt.
   
 
 ---
 
 ### **6. AI Helper**
 Includes:
-- Brief explanations in engineering (RMS, ADC, RC filters)  
+- Short overviews in engineering (RMS, ADC, RC filters)  
 - A multi-choice test 
-- Viewer of stored results 
-- Internal testing that is automated (3 tests)
+- Display of stored results
+- Automated internal testing (three tests)
 
 Example output:
 ```
@@ -98,7 +108,7 @@ Passed 3/3 tests.
 
 ## File Logging
 
-Results are saved and added to a text file:
+The outcomes are added to a text file and saved:
 
 ```
 results.txt
@@ -111,7 +121,7 @@ ADC adc=512 vref=3.30 V=1.6500 T=165.00
 RES R=1000 tol=±5%
 ```
 
-The following enhances project completeness and facilitates traceability.
+The following improves project completion and makes traceability easier.
 
 ---
 
@@ -150,19 +160,19 @@ You will see:
 ## Project Structure
 
 ```
-│── main.c          # Menu handling 
-│── funcs.c         # Complete use of every tool
+│── main.c          # The menu navigation
+│── funcs.c         # Full utilisation of each tool
 │── funcs.h         # Definitions of functions
 │── results.txt     # Logs 
 │── README.md       # Recordkeeping
-│── Makefile        # Script for optional builds
+│── Makefile        # Program for extra setups
 ```
 
 ---
 
 ## Testing
 
-There is a test harness built into the AI Assistant.
+The AI Assistant has a built-in test harness.
 
 To run tests:
 ```
@@ -174,16 +184,19 @@ Expected output:
 Passed 3/3 tests.
 ```
 
-The result confirms the accuracy of the Hzrad/s round-trip calculation, dBm conversion, and RMS calculation.
+The result validates the accuracy of the Hzrad/s round-trip calculation, dBm conversion, and RMS calculation.
 
 ---
 
 ## Notes
 
-- To avoid crashes, input validation was applied throughout.  
-- Extra features (testing + explanations + logging)  exhibit imagination and comprehension that goes beyond the necessities.  
+- Strong input validation is employed throughout the application.
+
+- Extra functions (logging, quiz, explanations, testing) go beyond the bare requirements.
+
+- The toolbox is flexible and easy to extend
 
 ---
 
 ## License
-This project was created for use in ELEC2645 Unit 2 at the University of Leeds.
+This task was built for use in ELEC2645 Unit 2 at the University of Leeds.
