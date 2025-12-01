@@ -11,13 +11,13 @@ A command-line tool created for the ELEC2645 Unit 2 project is called the Engine
  The objective is to offer a small collection of engineering utilities that are commonly needed in:
 
 
- ELEC2101: Design of Electronic Circuits and Systems
+ - ELEC2101: Design of Electronic Circuits and Systems
 
- General electronics laboratory tasks
+ - General electronics laboratory tasks
 
- Signal processing fundamentals
+ - Signal processing fundamentals
 
- Sensor-to-ADC conversion job
+ - Sensor-to-ADC conversion job
 
  The software extends on the Unit Version 2.1 template by providing new tools, greater input validation, file logging, and internal automated testing.
 
